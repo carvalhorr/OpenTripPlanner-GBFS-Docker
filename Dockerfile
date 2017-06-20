@@ -1,5 +1,5 @@
 FROM java:8
 EXPOSE 8080
-ADD otp.jar otp.jar
+ADD otp.jar /var/otp/otp.jar
 ADD graphs /var/otp/graphs
-ENTRYPOINT ["java","-jar","otp.jar"]
+ENTRYPOINT ["java","-jar","/var/otp/otp.jar"]

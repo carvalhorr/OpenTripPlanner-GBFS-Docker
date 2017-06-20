@@ -11,21 +11,20 @@
 
     updaters: [
 
-        // GTFS-RT service alerts (frequent polling)
-        {
-            type: "real-time-alerts",
-            frequencySec: 30,
-            url: "http://developer.trimet.org/ws/V1/FeedSpecAlerts/appID/0123456789ABCDEF",
-            feedId: "TriMet"
-        },
-
-        // Polling bike rental updater.
-        // sourceType can be: jcdecaux, b-cycle, bixi, keolis-rennes, ov-fiets,
-        // city-bikes, citi-bike-nyc, next-bike, vcub, kml
+        // Coast Bikeshare
         {
             type: "bike-rental",
-            frequencySec: 300,
+            frequencySec: 30,
             sourceType: "gbfs",
             url: "http://coast.socialbicycles.com/opendata/"
-        }    ]
+        },
+
+        // Share-A-Bull
+        {
+            type: "bike-rental",
+            frequencySec: 30,
+            sourceType: "gbfs",
+            url: "http://usf.socialbicycles.com/opendata/"
+        }
+    ]
 }
